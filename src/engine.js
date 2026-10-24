@@ -220,14 +220,16 @@ const aims = {
     const turning = t > 500 && cycle < 0.4;
     const k = turning ? cycle / 0.4 : 0;
     const spin = k * k * (3 - 2 * k);
-    const squeeze = turning ? 0 : 0.5 + 0.5 * Math.sin((t / 700) * Math.PI * 2 - Math.PI / 2);
+    const rest = turning ? 0 : (cycle - 0.4) / 0.6;
+    const squeeze = 0.5 - 0.5 * Math.cos(rest * Math.PI * 4);
+    const lift = turning ? -Math.round(3 * Math.sin(Math.PI * k)) : -Math.round(2 * squeeze);
     return {
       pose: pose({
         h: -Math.round(4 * squeeze),
         w: Math.round(3 * squeeze),
-        lean: turning ? 0 : Math.round(2 * Math.sin((t / 1050) * Math.PI * 2)),
-        leftDown: turning ? -3 : -Math.round(2 * squeeze),
-        rightDown: turning ? -3 : -Math.round(2 * squeeze),
+        lean: Math.round(2 * Math.sin(rest * Math.PI * 2)),
+        leftDown: lift,
+        rightDown: lift,
         y: turning ? -Math.round(2 * Math.sin(Math.PI * k)) : 0,
         spin,
       }),
