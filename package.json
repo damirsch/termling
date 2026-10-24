@@ -1,0 +1,50 @@
+{
+  "name": "termling",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Unofficial fan project, not affiliated with or endorsed by Anthropic. A tiny pixel desk buddy that lives above the Claude Code prompt and reacts to the session",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "termling": "bin/termling.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./react": {
+      "types": "./types/react.d.ts",
+      "default": "./src/react.js"
+    }
+  },
+  "files": [
+    ".claude-plugin",
+    "bin",
+    "hooks",
+    "lib",
+    "src",
+    "types",
+    "web",
+    "README.md"
+  ],
+  "keywords": [
+    "unofficial",
+    "fan-project",
+    "pixel-art",
+    "mascot",
+    "hooks",
+    "coding-agent"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}

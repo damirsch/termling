@@ -1,0 +1,5 @@
+{
+  "name": "termling",
+  "owner": { "name": "Damir" },
+  "plugins": [{ "name": "termling", "source": "./", "description": "Unofficial fan project. A tiny pixel critter above the Claude Code prompt that reacts to your session" }]
+}
