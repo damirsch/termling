@@ -31,7 +31,7 @@ The plugin needs no server and no hooks in settings: it listens to the session f
 
 ### What it cannot do yet
 
-- It draws only where Claude Code draws plugin UI: the terminal and the desktop app. The chat panel of the Claude Code extension for VS Code and Cursor does not show plugin UI yet, so there the critter is invisible.
+- It draws only in the terminal. The desktop app and the chat panel of the Claude Code extension for VS Code and Cursor do not show it, use the integrated terminal there.
 - While a permission dialog is open Claude Code hides the band, so the waiting state shows only as the dialog closes.
 - Where an organization manages Claude Code, the permission, notification and compaction events skip personally installed plugins, so those states do not show.
 - It needs a terminal with true color, which every current macOS and Linux terminal has.
