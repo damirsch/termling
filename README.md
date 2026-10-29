@@ -9,20 +9,20 @@ termling is a small pixel critter that lives right inside Claude Code, in a band
 Run this in a terminal:
 
 ```bash
-claude plugin install termling --marketplace damirsch/termling
+claude plugin install termling --marketplace heydamir/termling
 ```
 
 On an older Claude Code without `--marketplace`, the same in two steps:
 
 ```bash
-claude plugin marketplace add damirsch/termling
+claude plugin marketplace add heydamir/termling
 claude plugin install termling@termling
 ```
 
 Or let the helper do it. It asks first and saves backups of the Claude Code files it updates:
 
 ```bash
-npx github:damirsch/termling mod install
+npx github:heydamir/termling mod install
 ```
 
 Then start `claude` in a terminal. The critter shows above the prompt in every new terminal session, Cursor and VS Code integrated terminals included. Run `/termling` inside a session to hide it or bring it back, or collapse the band with its `[-]`.
@@ -39,7 +39,7 @@ The plugin needs no server and no hooks in settings: it listens to the session f
 ### Removing it
 
 ```bash
-npx github:damirsch/termling remove
+npx github:heydamir/termling remove
 ```
 
 removes the plugin and any termling hooks, after saving backups. By hand:
@@ -54,11 +54,11 @@ claude plugin marketplace remove termling
 The older way still works: hooks in `~/.claude/settings.json` post each event to a tiny local bridge, and a page shows the critter big with a Pop out button for an always on top window (Document Picture in Picture in Chrome and Edge).
 
 ```bash
-npx github:damirsch/termling              # ask, add hooks, start the bridge, open the page
-npx github:damirsch/termling install      # only add the hooks
-npx github:damirsch/termling uninstall    # remove only the hooks termling added
-npx github:damirsch/termling bridge       # only start the bridge and the page
-npx github:damirsch/termling status       # show which hooks are installed
+npx github:heydamir/termling              # ask, add hooks, start the bridge, open the page
+npx github:heydamir/termling install      # only add the hooks
+npx github:heydamir/termling uninstall    # remove only the hooks termling added
+npx github:heydamir/termling bridge       # only start the bridge and the page
+npx github:heydamir/termling status       # show which hooks are installed
 ```
 
 Options: `--port 4317`, `--settings <file>` to work on another settings file, `--yes` to skip the question, `--no-open` to keep the browser closed, `--no-hooks` to start without touching settings. The hooks are async, write nothing to Claude's context and carry a `via=termling` marker, which is how `uninstall` finds exactly its own entries. The bridge listens on `127.0.0.1` only and never forwards prompts or file contents.
@@ -66,7 +66,7 @@ Options: `--port 4317`, `--settings <file>` to work on another settings file, `-
 ## Use the critter in your own agent UI
 
 ```bash
-npm install github:damirsch/termling
+npm install github:heydamir/termling
 ```
 
 ```jsx

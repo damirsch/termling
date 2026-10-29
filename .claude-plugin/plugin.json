@@ -2,7 +2,7 @@
   "name": "termling",
   "version": "0.2.0",
   "description": "Unofficial fan project, not affiliated with or endorsed by Anthropic. A tiny pixel critter above the prompt that reacts to your session",
-  "author": { "name": "Damir", "url": "https://github.com/damirsch" },
-  "homepage": "https://github.com/damirsch/termling",
+  "author": { "name": "Damir", "url": "https://github.com/heydamir" },
+  "homepage": "https://github.com/heydamir/termling",
   "license": "MIT"
 }
